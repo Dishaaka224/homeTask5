@@ -1,181 +1,229 @@
 ﻿using System;
-class Program
+
+// task 1 
+
+int son = int.Parse(Console.ReadLine()!.Trim());
+
+if (son > 0)
 {
-    // ____ Task 1 _____
-    static void ShowWelcome()
-    {
-        Console.WriteLine("Welcome to Dubai");
-    }
- 
-    // ____ Task 2 _____
-    static void ShowGreeting(string name)
-    {
-        Console.WriteLine($"Hello {name}!");
-    }
- 
-    // ____Task 3_____
-    static int GetPassingScore()
-    {
-        return 50 + 10;
-    }
- 
-    // ____Task 4 _____
-    static int Add(int a, int b)
-    {
-        return a + b;
-    }
- 
-    // ____Task 5 _____
-    static string CreateOrderMessage(string product, string quantity)
-    {
-        return $"Order: {quantity} {product}";
-    }
- 
-    // ____Task 8 _____
-    static void AddBonus(ref int score, int bonus)
-    {
-        if (score < 0 || score > 100 || bonus < 0 || bonus > 100)
-        {
-            return;
-        }
- 
-        score += bonus;
- 
-        if (score > 100)
-        {
-            score = 100;
-        }
-    }
- 
-    static void TestBonus(int score, int bonus)
-    {
-        int before = score;
-        AddBonus(ref score, bonus);
-        Console.WriteLine($"Before: {before}, Bonus: {bonus}, After: {score}");
-    }
- 
-    // ____Task 9_____
-    static bool TrySellItems(ref int stock, int quantity)
-    {
-        if (quantity <= 0 || quantity > stock)
-        {
-            return false;
-        }
- 
-        stock -= quantity;
-        return true;
-    }
- 
-    static void TestSell(int stock, int quantity)
-    {
-        int before = stock;
-        bool result = TrySellItems(ref stock, quantity);
-        Console.WriteLine($"Before: {before}, Quantity: {quantity}, After: {stock}, Result: {result}");
-    }
+    Console.WriteLine("Positive number");
 
-    // ____Task 10 ____
+}
+else if (son < 0)
+{
+    Console.WriteLine("Negative number");
+}
+else
+{
+    Console.WriteLine("Zero");
+}
 
-    static void GetNumberStats(int first, int second, int third, out int min, out int middle, out int max)
-    {
-        int a = first;
-        int b = second;
-        int c = third;
-        int temp;
 
-        if (a > b)
-        {
-            temp = a;
-            a = b;
-            b = temp;
-        }
-        if (b > c)
-        {
-            temp = b;
-            b = c;
-            c = temp;
-        }
-        if (a > b)
-        {
-            temp = a;
-            a = b;
-            b = temp;
-        }
+// task 2 
 
-        min = a;
-        middle = b;
-        max = c;
-    }
+int number = int.Parse(Console.ReadLine()!.Trim());
 
-    static void TestStats(int first, int second, int third)
-    {
-        GetNumberStats(first, second, third, out int min, out int middle, out int max);
-        Console.WriteLine($"Min: {min}; Middle: {middle}; Max: {max}");
-    }
+if ( number % 2 == 0)
+{
+    Console.WriteLine("Even number");
+}
+else
+{
+    Console.WriteLine("Odd number");
+}
 
-    // ____ Task 11 ____
-    static bool TryCalculateAverage (int first, int second, int third, out double average)
-    {
-        if (first < 0 || first > 100 || second < 0 || second > 100 || third < 0 || third > 100)
-        {
-            average = 0;
-            return false;
-        }
-        average = (first + second + third) / 3;
-        return true;
-    }   
-     static void TestAverage(int first, int second, int third)
-    {
-        bool success = TryCalculateAverage(first, second, third, out double average);
-        Console.WriteLine($"Success: {success}; Average: {average}");
-    }
+// task 3 
 
-    // ____ MAIN _____
-    static void Main()
-    {
-        Console.WriteLine("\n___ Task 1 ___");
-        ShowWelcome();
- 
-        Console.WriteLine("\n___ Task 2 ___");
-        ShowGreeting("Ali");
-        ShowGreeting("Muslima");
- 
-        Console.WriteLine("\n___ Task 3 ___");
-        int score = GetPassingScore();
-        Console.WriteLine($"Passing score is: {score}");
- 
-        Console.WriteLine("\n___ Task 4 ___");
-        Console.WriteLine(Add(5, 8));
-        Console.WriteLine(Add(7, 8));
-        Console.WriteLine(Add(5, 11));
- 
-        Console.WriteLine("\n___ Task 5 ___");
-        Console.WriteLine(CreateOrderMessage("Book", "2"));
-        Console.WriteLine(CreateOrderMessage("Ruchka", "2"));
- 
-        Console.WriteLine("\n___ Task 8 ___");
-        TestBonus(70, 20);
-        TestBonus(60, 20);
-        TestBonus(-50, 30);
-        TestBonus(50, -1);
- 
-        Console.WriteLine("\n___ Task 9 ___");
-        TestSell(20, 5);
-        TestSell(10, 10);
-        TestSell(10, 12);
-        TestSell(3, -1);
+int first = int.Parse(Console.ReadLine()!.Trim());
+int second = int.Parse(Console.ReadLine()!.Trim());
 
-        Console.WriteLine("\n___ Task 10 ___");
-        TestStats(8, 3, 5);
-        TestStats(9, 2, 6);
-        TestStats(4, 4, 1);
-        TestStats(7, 7, 7);
+if (first > second)
+{
+    Console.WriteLine ($"Biggest number is: {first}");
 
-        Console.WriteLine("\n___ Task 11 ___");
-        TestAverage(80, 90, 100);
-        TestAverage(70, 71, 72);
-        TestAverage(0, 50, 100);
-        TestAverage(80, -1, 90);
-        TestAverage(80, 101, 90);
+}
+else if ( second > first)
+{
+    Console.WriteLine ($" Biggest number is: { second }");
+
+}
+else
+{
+    Console.WriteLine ($" Both numbers are equal: { first }");
     
+    
+}
+
+// taskk 4
+
+int grade = int.Parse(Console.ReadLine()!.Trim());
+
+if (grade < 0 || grade > 100)
+{ 
+    Console.WriteLine($" Invalid grade:{grade}");
+}
+else if (grade >= 90)
+{
+    Console.WriteLine($" Excellent grade:{grade}");
+}
+else if (grade >= 70)
+{
+ Console.WriteLine($" Good grade:{grade}");   
+}
+else if (grade >= 60) {
+    Console.WriteLine($" Satisfactory grade:{grade}");
+}
+else {
+    Console.WriteLine($" Unsatisfactory grade:{grade}");
+}
+
+// task 5 
+
+int a = int.Parse(Console.ReadLine()!.Trim());
+int b = int.Parse(Console.ReadLine()!.Trim());
+string answer = Console.ReadLine()!.Trim();
+
+switch( answer)
+{
+     case "+":
+        Console.WriteLine($"{a} + {b} = {a + b}");
+        break;
+    case "-":
+        Console.WriteLine($"{a} - {b} = {a - b}");
+        break;
+    case "*":
+        Console.WriteLine($"{a} * {b} = {a * b}");
+        break;
+    case "/":
+        Console.WriteLine($"{a} / {b} = {a / b}");
+        break;
+    default:
+    Console.WriteLine("Invalid operation");
+    break;
+}
+
+// task 6 
+
+
+// task 7 
+
+int value = int.Parse(Console.ReadLine()!.Trim());
+
+for (int i = 1; i <= value; i++)
+{
+    Console.WriteLine(i + "");
+
+}
+Console.WriteLine(" ");
+
+// task 8
+
+int num = int.Parse(Console.ReadLine()!.Trim());
+
+while (num >= 1)
+{
+    Console.WriteLine(num + " ");
+    num--;
+}
+Console.WriteLine();
+
+// task 9
+
+int raqam = int.Parse(Console.ReadLine()!.Trim());
+int sum = 0;
+
+for ( int i = 1; i <= raqam; i++)
+{
+    sum +=i;
+
+}
+
+Console.WriteLine($"Sum of numbers: { sum}");
+
+// task 10 
+
+
+// task 11
+
+int numbs = int.Parse(Console.ReadLine()!.Trim());
+for ( int i = 1 ; i <= numbs; i++)
+{
+    if (i % 5 == 0)
+    {
+        Console.WriteLine(i + " ");
     }
 }
+Console.WriteLine($"Answer: {numbs}");
+
+// task12 
+
+int nomer = int.Parse(Console.ReadLine()!.Trim());
+for (int i = 1; i <= 10 ; i++)
+{
+    Console.WriteLine($"Kara jadval: {nomer}*{i}={nomer*i}");
+}
+
+// task 13
+
+int n = int.Parse(Console.ReadLine()!.Trim());                  
+int count = 0;
+int qushilganda = 0;
+
+for ( int i = 1 ; i <= n; i++)
+{
+    if (i % 3 == 0)
+    {
+        Console.WriteLine(i + " ");
+        count++;
+        qushilganda+= i;
+    }
+}
+Console.WriteLine($"Count: {count}");
+Console.WriteLine($"Sum: {qushilganda}");
+
+// task 14
+
+int chislo = int.Parse(Console.ReadLine()!.Trim());
+int factorial = 1;
+for (int i=2; i <= chislo; i++)
+{
+    factorial *= i;
+}
+Console.WriteLine($"Result of number in FActorial:{chislo}");
+
+// task 15 
+
+int rebmun = int.Parse(Console.ReadLine()!.Trim()); // int dan ken number suzini chappa  tomonidan boshlab yozganman uzim chunaman !
+
+int mus = 0;// bu erdaham huddi shunaqa chappa suz yozilgan
+
+while (rebmun> 0)
+{
+    mus += rebmun % 12 ;
+    rebmun /= 12;
+
+} 
+Console.WriteLine($"Yig'indi:{rebmun}");
+
+//task 16 
+int sson = int.Parse(Console.ReadLine()!.Trim());
+bool isPrime = sson >= 2 ;
+
+for (int i = 2; i <= sson - 1 ; i++)
+{
+    if (sson % i == 0)
+    {
+        isPrime = false;
+        break;
+    }
+}
+if (isPrime)
+{
+    Console.WriteLine($"Positive number:{sson})");
+
+}
+else
+{
+    Console.WriteLine($"Negative number:{sson})");
+}
+
